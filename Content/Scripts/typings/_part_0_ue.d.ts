@@ -5316,9 +5316,9 @@ declare class AnimSequence extends AnimSequenceBase {
 	AddBoneIntegerCustomAttribute(BoneName: string,AttributeName: string,TimeKeys: number[],ValueKeys: number[]): void;
 	AddBoneFloatCustomAttribute(BoneName: string,AttributeName: string,TimeKeys: number[],ValueKeys: number[]): void;
 	static C(Other: UObject | any): AnimSequence;
+	GetLevelSequenceLinkFromAnimSequence(): AnimSequenceLevelSequenceLink;
 	GetMovingRangesFromRootMotion(StopSpeedThreshold: number,SampleRate: number): Vector2D[];
 	GetStoppedRangesFromRootMotion(StopSpeedThreshold: number,SampleRate: number): Vector2D[];
-	GetLevelSequenceLinkFromAnimSequence(): AnimSequenceLevelSequenceLink;
 	AddAnimationSyncMarker(MarkerName: string,Time: number,NotifyTrackName: string): void;
 	AddCurve(CurveName: string,CurveType: ERawCurveTrackTypes,bMetaDataCurve: boolean): void;
 	AddFloatCurveKey(CurveName: string,Time: number,Value: number): void;
@@ -5365,9 +5365,9 @@ declare class AnimSequence extends AnimSequenceBase {
 	SetIsRootMotionLockForced(bForced: boolean): void;
 	SetRootMotionEnabled(bEnabled: boolean): void;
 	SetRootMotionLockType(RootMotionLockType: ERootMotionRootLock): void;
+	static GetLevelSequenceLinkFromAnimSequence(InAnimSequence: AnimSequence): AnimSequenceLevelSequenceLink;
 	static GetMovingRangesFromRootMotion(AnimSequence: AnimSequence,StopSpeedThreshold: number,SampleRate: number): Vector2D[];
 	static GetStoppedRangesFromRootMotion(AnimSequence: AnimSequence,StopSpeedThreshold: number,SampleRate: number): Vector2D[];
-	static GetLevelSequenceLinkFromAnimSequence(InAnimSequence: AnimSequence): AnimSequenceLevelSequenceLink;
 	static AddAnimationSyncMarker(AnimationSequence: AnimSequence,MarkerName: string,Time: number,NotifyTrackName: string): void;
 	static AddCurve(AnimationSequence: AnimSequence,CurveName: string,CurveType: ERawCurveTrackTypes,bMetaDataCurve: boolean): void;
 	static AddFloatCurveKey(AnimationSequence: AnimSequence,CurveName: string,Time: number,Value: number): void;
@@ -16734,24 +16734,6 @@ declare class MovieSceneUserImportFBXControlRigSettings extends UObject {
 	static C(Other: UObject | any): MovieSceneUserImportFBXControlRigSettings;
 }
 
-declare class AudioInputDeviceInfo { 
-	DeviceName: string;
-	DeviceID: string;
-	InputChannels: number;
-	PreferredSampleRate: number;
-	bSupportsHardwareAEC: boolean;
-	clone() : AudioInputDeviceInfo;
-	static C(Other: UObject | any): AudioInputDeviceInfo;
-	Conv_AudioInputDeviceInfoToString(): string;
-	static Conv_AudioInputDeviceInfoToString(Info: AudioInputDeviceInfo): string;
-}
-
-declare class ActorLayer { 
-	Name: string;
-	clone() : ActorLayer;
-	static C(Other: UObject | any): ActorLayer;
-}
-
 declare class SequencerBoundObjects { 
 	BindingProxy: MovieSceneBindingProxy;
 	BoundObjects: UObject[];
@@ -16773,6 +16755,24 @@ declare class MovieSceneUserImportFBXSettings extends UObject {
 	static GetDefaultObject(): MovieSceneUserImportFBXSettings;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MovieSceneUserImportFBXSettings;
 	static C(Other: UObject | any): MovieSceneUserImportFBXSettings;
+}
+
+declare class AudioInputDeviceInfo { 
+	DeviceName: string;
+	DeviceID: string;
+	InputChannels: number;
+	PreferredSampleRate: number;
+	bSupportsHardwareAEC: boolean;
+	clone() : AudioInputDeviceInfo;
+	static C(Other: UObject | any): AudioInputDeviceInfo;
+	Conv_AudioInputDeviceInfoToString(): string;
+	static Conv_AudioInputDeviceInfoToString(Info: AudioInputDeviceInfo): string;
+}
+
+declare class ActorLayer { 
+	Name: string;
+	clone() : ActorLayer;
+	static C(Other: UObject | any): ActorLayer;
 }
 
 declare class FilePath { 
@@ -18377,7 +18377,7 @@ declare class NiagaraEmitter extends UObject {
 	bExposeToLibrary: boolean;
 	bIsTemplateAsset: boolean;
 	ScratchPadScripts: NiagaraScript[];
-	ChangeID: Guid;
+	ChangeId: Guid;
 	EditorData: NiagaraEditorDataBase;
 	EditorParameters: NiagaraEditorParametersAdapterBase;
 	UniqueEmitterName: string;
