@@ -2509,11 +2509,11 @@ declare class Actor extends UObject {
 	SetFolderPath(NewFolderPath: string): void;
 	SetFolderPath_Recursively(NewFolderPath: string): void;
 	SetIsTemporarilyHiddenInEditor(bIsHidden: boolean): void;
-	AddActorToLayer(Layer: ActorLayer): void;
-	RemoveActorFromLayer(Layer: ActorLayer): void;
 	DestroyActor(): boolean;
 	PilotLevelActor(): void;
 	SetActorSelectionState(bShouldBeSelected: boolean): void;
+	AddActorToLayer(Layer: ActorLayer): void;
+	RemoveActorFromLayer(Layer: ActorLayer): void;
 	Actor_GetWorld(): World;
 	GetComponentsByClass(ComponentClass: UnrealEngineClass): ActorComponent[];
 	GetLastRenderTime(): number;
@@ -2548,11 +2548,11 @@ declare class Actor extends UObject {
 	static SetFolderPath(Actor: Actor,NewFolderPath: string): void;
 	static SetFolderPath_Recursively(Actor: Actor,NewFolderPath: string): void;
 	static SetIsTemporarilyHiddenInEditor(Actor: Actor,bIsHidden: boolean): void;
-	static AddActorToLayer(InActor: Actor,Layer: ActorLayer): void;
-	static RemoveActorFromLayer(InActor: Actor,Layer: ActorLayer): void;
 	static DestroyActor(ActorToDestroy: Actor): boolean;
 	static PilotLevelActor(ActorToPilot: Actor): void;
 	static SetActorSelectionState(Actor: Actor,bShouldBeSelected: boolean): void;
+	static AddActorToLayer(InActor: Actor,Layer: ActorLayer): void;
+	static RemoveActorFromLayer(InActor: Actor,Layer: ActorLayer): void;
 	static Actor_GetWorld(Actor: Actor): World;
 	static GetComponentsByClass(Actor: Actor,ComponentClass: UnrealEngineClass): ActorComponent[];
 	static GetLastRenderTime(Actor: Actor): number;
