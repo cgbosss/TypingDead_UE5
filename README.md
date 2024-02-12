@@ -1,11 +1,14 @@
 # Introduction 
 
-Game is made in Unreal Engine 5.1
+Game is made in Unreal Engine 5.2
+
+The game is now Project **ONI**
 
 
-The Typing Dead Man a Rail Shooter in UE5
 
-Trying to recreate a Game as a Typing FPS Shooter
+//The Typing Dead Man a Rail Shooter in UE5
+
+//Trying to recreate a Game as a Typing FPS Shooter
 
 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
